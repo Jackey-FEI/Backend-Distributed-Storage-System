@@ -1,0 +1,302 @@
+=== TestRemoteSyncBasic4: 4 servers x 1 actor: Put on all actors concurrently (distinct keys), Get on all
+[] remoteDescs
+localhost:12025/0 update leaders list..
+localhost:12025/0
+[{"Address":"localhost:12025","Counter":0}] remoteDescs
+NewServer ref &{localhost:12025 0}
+Starting leader broadcast routine...
+Starting leader remote broadcast routine...
+localhost:12045/0 update leaders list..
+localhost:12025/0
+localhost:12045/0
+localhost:12045/0 broadcasts to localhost:12025/0 with [0x1400019e888 0x1400019e8d0]
+Starting leader remote broadcast routine...
+[{"Address":"localhost:12025","Counter":0} {"Address":"localhost:12045","Counter":0}] remoteDescs
+NewServer ref &{localhost:12025 0}
+NewServer ref &{localhost:12045 0}
+Starting leader broadcast routine...
+localhost:12065/0 update leaders list..
+localhost:12025/0
+localhost:12045/0
+localhost:12065/0
+localhost:12065/0 broadcasts to localhost:12025/0 with [0x1400019e9c0 0x1400019e9f0 0x1400028e048]
+localhost:12065/0 broadcasts to localhost:12045/0 with [0x1400019e9c0 0x1400019e9f0 0x1400028e048]
+Starting leader remote broadcast routine...
+Starting leader broadcast routine...
+[{"Address":"localhost:12025","Counter":0} {"Address":"localhost:12045","Counter":0} {"Address":"localhost:12065","Counter":0}] remoteDescs
+NewServer ref &{localhost:12025 0}
+NewServer ref &{localhost:12045 0}
+NewServer ref &{localhost:12065 0}
+localhost:12085/0 update leaders list..
+localhost:12025/0
+localhost:12045/0
+localhost:12065/0
+localhost:12085/0
+localhost:12085/0 broadcasts to localhost:12025/0 with [0x1400028e138 0x1400028e168 0x1400028e198 0x1400000e468]
+localhost:12085/0 broadcasts to localhost:12045/0 with [0x1400028e138 0x1400028e168 0x1400028e198 0x1400000e468]
+localhost:12085/0 broadcasts to localhost:12065/0 with [0x1400028e138 0x1400028e168 0x1400028e198 0x1400000e468]
+Starting leader remote broadcast routine...
+Starting leader broadcast routine...
+localhost:12025/0 received [0x1400019f410 0x1400019f428]
+localhost:12045/0 received [0x1400000e9d8 0x1400000e9f0 0x1400000ea08]
+localhost:12065/0 received [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48]
+localhost:12025/0 :length:  [0x1400019f410 0x1400019f428] : 921313
+localhost:12045/0 :length:  [0x1400000e9d8 0x1400000e9f0 0x1400000ea08] : 921313
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12045/0 :length:  [0x1400000e9d8 0x1400000e9f0 0x1400000ea08] : 921313
+localhost:12025/0 :length:  [0x1400019f410 0x1400019f428] : 921313
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+Putting the actor for its value: key_0 :  value_0
+received put with key: key_0 and value value_0
+Actor responded put:  {}
+Putting the actor for its value: key_1 :  value_1
+received put with key: key_1 and value value_1
+Actor responded put:  {}
+Putting the actor for its value: key_2 :  value_2
+received put with key: key_2 and value value_2
+Actor responded put:  {}
+Putting the actor for its value: key_3 :  value_3
+received put with key: key_3 and value value_3
+Actor responded put:  {}
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12025/0 :length:  [0x1400019f410 0x1400019f428] : 921313
+localhost:12045/0 :length:  [0x1400000e9d8 0x1400000e9f0 0x1400000ea08] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000}]
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000}]
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000}]
+localhost:12045/0 received222 update with content: map[key_3:{value_3 1701224927563385000}]
+localhost:12025/0 received222 update with content: map[key_2:{value_2 1701224927562582000}]
+localhost:12065/0 received222 update with content: map[key_3:{value_3 1701224927563385000}]
+localhost:12085/0 received222 update with content: map[key_2:{value_2 1701224927562582000}]
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12045/0 :length:  [0x140004020c0 0x140004020d8 0x140004020f0 0x14000402108] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 :length:  [0x1400000fb48 0x1400000fb60 0x1400000fb78 0x1400000fb90] : 921313
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000} key_2:{value_2 1701224927562582000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12065/0 with: content:  map[key_0:{value_0 1701224927560966000} key_2:{value_2 1701224927562582000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12085/0 with: content:  map[key_0:{value_0 1701224927560966000} key_2:{value_2 1701224927562582000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12085/0 with: content:  map[key_1:{value_1 1701224927561769000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 received222 update with content: map[key_1:{value_1 1701224927561769000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 :length:  [0x140004020c0 0x140004020d8 0x140004020f0 0x14000402108] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 :length:  [0x1400000fb48 0x1400000fb60 0x1400000fb78 0x1400000fb90] : 921313
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12065/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12085/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12085/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12025/0 :length:  [0x1400000fb48 0x1400000fb60 0x1400000fb78 0x1400000fb90] : 921313
+localhost:12045/0 :length:  [0x140004020c0 0x140004020d8 0x140004020f0 0x14000402108] : 921313
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12065/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12085/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12085/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12045/0 :length:  [0x140004020c0 0x140004020d8 0x140004020f0 0x14000402108] : 921313
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12025/0 :length:  [0x1400000fb48 0x1400000fb60 0x1400000fb78 0x1400000fb90] : 921313
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12085/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12065/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12085/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 received222 update with content: map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 :length:  [0x140004020c0 0x140004020d8 0x140004020f0 0x14000402108] : 921313
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12085/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 :length:  [0x1400000fb48 0x1400000fb60 0x1400000fb78 0x1400000fb90] : 921313
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12065/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12085/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 :length:  [0x140004020c0 0x140004020d8 0x140004020f0 0x14000402108] : 921313
+localhost:12025/0 :length:  [0x1400000fb48 0x1400000fb60 0x1400000fb78 0x1400000fb90] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12065/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12085/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12085/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 received222 update with content: map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 :length:  [0x1400000ef00 0x1400000ef18 0x1400000ef30 0x1400000ef48] : 921313
+localhost:12025/0 :length:  [0x1400000fb48 0x1400000fb60 0x1400000fb78 0x1400000fb90] : 921313
+localhost:12065/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12045/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12065/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 :length:  [0x140004020c0 0x140004020d8 0x140004020f0 0x14000402108] : 921313
+localhost:12085/0 :length:  [0x1400019ee70 0x1400019ee88 0x1400019eea0 0x1400019eeb8] : 921313
+localhost:12045/0 sending to : localhost:12025/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12025/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12065/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12045/0 sending to : localhost:12085/0 with: content:  map[key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12085/0 sending to : localhost:12065/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12025/0 sending to : localhost:12085/0 with: content:  map[key_0:{value_0 1701224927560966000} key_1:{value_1 1701224927561769000} key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12045/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+localhost:12065/0 sending to : localhost:12085/0 with: content:  map[key_2:{value_2 1701224927562582000} key_3:{value_3 1701224927563385000}]
+Getting the actor for its value...
+Actor responded value_0 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded  (should be 3) revise this print
+Getting the actor for its value...
+Actor responded  (should be 3) revise this print
+Getting the actor for its value...
+Actor responded  (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_1 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_1 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded  (should be 3) revise this print
+Getting the actor for its value...
+Actor responded  (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_2 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_2 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_2 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_2 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_3 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_3 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_3 (should be 3) revise this print
+Getting the actor for its value...
+Actor responded value_3 (should be 3) revise this print
+--- FAIL: TestRemoteSyncBasic4 (2.83s)
+    utils.go:77: Starting server with ActorSystem on port 12025 and 1 query actors on ports 12026-12026
+    utils.go:77: Starting server with ActorSystem on port 12045 and 1 query actors on ports 12046-12046
+    utils.go:77: Starting server with ActorSystem on port 12065 and 1 query actors on ports 12066-12066
+    utils.go:77: Starting server with ActorSystem on port 12085 and 1 query actors on ports 12086-12086
+    remote_sync_test.go:82: Waiting a few round trips for servers to start up
+    query_wrappers.go:13: (server 0, actor 0) Calling client.Put("key_0", "value_0")
+    query_wrappers.go:13: (server 0, actor 0) Put("key_0", "value_0") succeeded
+    query_wrappers.go:13: (server 1, actor 0) Calling client.Put("key_1", "value_1")
+    query_wrappers.go:13: (server 1, actor 0) Put("key_1", "value_1") succeeded
+    query_wrappers.go:13: (server 2, actor 0) Calling client.Put("key_2", "value_2")
+    query_wrappers.go:13: (server 2, actor 0) Put("key_2", "value_2") succeeded
+    query_wrappers.go:13: (server 3, actor 0) Calling client.Put("key_3", "value_3")
+    query_wrappers.go:13: (server 3, actor 0) Put("key_3", "value_3") succeeded
+    utils.go:96: Waiting 2s for sync
+    query_wrappers.go:13: (server 0, actor 0) Calling client.Get("key_0")
+    query_wrappers.go:13: (server 0, actor 0) Get("key_0") returned ("value_0", true)
+    query_wrappers.go:13: (server 1, actor 0) Calling client.Get("key_0")
+    query_wrappers.go:13: (server 1, actor 0) Get("key_0") returned ("", false)
+    query_wrappers.go:30: [ERROR] (server 1, actor 0) Get("key_0") gave ok=false, but expected value "value_0"
+    query_wrappers.go:13: (server 2, actor 0) Calling client.Get("key_0")
+    query_wrappers.go:13: (server 2, actor 0) Get("key_0") returned ("", false)
+    query_wrappers.go:30: [ERROR] (server 2, actor 0) Get("key_0") gave ok=false, but expected value "value_0"
+    query_wrappers.go:13: (server 3, actor 0) Calling client.Get("key_0")
+    query_wrappers.go:13: (server 3, actor 0) Get("key_0") returned ("", false)
+    query_wrappers.go:30: [ERROR] (server 3, actor 0) Get("key_0") gave ok=false, but expected value "value_0"
+    query_wrappers.go:13: (server 0, actor 0) Calling client.Get("key_1")
+    query_wrappers.go:13: (server 0, actor 0) Get("key_1") returned ("value_1", true)
+    query_wrappers.go:13: (server 1, actor 0) Calling client.Get("key_1")
+    query_wrappers.go:13: (server 1, actor 0) Get("key_1") returned ("value_1", true)
+    query_wrappers.go:13: (server 2, actor 0) Calling client.Get("key_1")
+    query_wrappers.go:13: (server 2, actor 0) Get("key_1") returned ("", false)
+    query_wrappers.go:30: [ERROR] (server 2, actor 0) Get("key_1") gave ok=false, but expected value "value_1"
+    query_wrappers.go:13: (server 3, actor 0) Calling client.Get("key_1")
+    query_wrappers.go:13: (server 3, actor 0) Get("key_1") returned ("", false)
+    query_wrappers.go:30: [ERROR] (server 3, actor 0) Get("key_1") gave ok=false, but expected value "value_1"
+    query_wrappers.go:13: (server 0, actor 0) Calling client.Get("key_2")
+    query_wrappers.go:13: (server 0, actor 0) Get("key_2") returned ("value_2", true)
+    query_wrappers.go:13: (server 1, actor 0) Calling client.Get("key_2")
+    query_wrappers.go:13: (server 1, actor 0) Get("key_2") returned ("value_2", true)
+    query_wrappers.go:13: (server 2, actor 0) Calling client.Get("key_2")
+    query_wrappers.go:13: (server 2, actor 0) Get("key_2") returned ("value_2", true)
+    query_wrappers.go:13: (server 3, actor 0) Calling client.Get("key_2")
+    query_wrappers.go:13: (server 3, actor 0) Get("key_2") returned ("value_2", true)
+    query_wrappers.go:13: (server 0, actor 0) Calling client.Get("key_3")
+    query_wrappers.go:13: (server 0, actor 0) Get("key_3") returned ("value_3", true)
+    query_wrappers.go:13: (server 1, actor 0) Calling client.Get("key_3")
+    query_wrappers.go:13: (server 1, actor 0) Get("key_3") returned ("value_3", true)
+    query_wrappers.go:13: (server 2, actor 0) Calling client.Get("key_3")
+    query_wrappers.go:13: (server 2, actor 0) Get("key_3") returned ("value_3", true)
+    query_wrappers.go:13: (server 3, actor 0) Calling client.Get("key_3")
+    query_wrappers.go:13: (server 3, actor 0) Get("key_3") returned ("value_3", true)
+FAIL
+exit status 1
+FAIL	github.com/cmu440/tests	2.956s

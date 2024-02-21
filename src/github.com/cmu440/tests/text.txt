@@ -1,0 +1,219 @@
+=== TestOneActorGet: Get from empty store
+PASS
+ok  	github.com/cmu440/tests	1.146s
+=== TestOneActorPut1: Put then get
+PASS
+ok  	github.com/cmu440/tests	1.160s
+=== TestOneActorPut2: Put that overwrites prior put
+PASS
+ok  	github.com/cmu440/tests	1.181s
+=== TestOneActorList1: Put then list
+PASS
+ok  	github.com/cmu440/tests	1.162s
+=== TestOneActorList2: Multiple puts, then multiple lists
+PASS
+ok  	github.com/cmu440/tests	1.187s
+=== TestOneActorTrace: Series of get/put/list ops
+PASS
+ok  	github.com/cmu440/tests	1.171s
+=== TestOneActorMultiClient1: Put from one client, get from another
+PASS
+ok  	github.com/cmu440/tests	1.151s
+=== TestOneActorMultiClient2: Put from 4 clients concurrently, get from all
+PASS
+ok  	github.com/cmu440/tests	1.165s
+=== TestRemoteTellBasic: remoteTell successfully sends & receives a remote actor message
+PASS
+ok  	github.com/cmu440/tests	1.360s
+=== TestRemoteTellOrder: remoteTell delivers messages in order
+--- FAIL: TestRemoteTellOrder (0.21s)
+    remote_tell_test.go:167: Starting receiver actor
+    remote_tell_test.go:176: Sending 5 actor messages from sender actor to *remote* receiver actor
+    remote_tell_test.go:117: ActorSystem 2 reported error: Tell called for invalid local ActorRef, or ChannelRef used twice (id 0)
+    remote_tell_test.go:194: Out-of-order: expected 1, got 5
+FAIL
+exit status 1
+FAIL	github.com/cmu440/tests	0.356s
+=== TestRemoteTellNoBlock: remoteTell does not wait for a reply from the remote system before returning
+PASS
+ok  	github.com/cmu440/tests	1.378s
+=== TestLocalSyncBasic1: 2 actors: Put on one actor, Get on all
+PASS
+ok  	github.com/cmu440/tests	1.662s
+=== TestLocalSyncBasic2: 2 actors: Put on all actors concurrently (distinct keys), Get on all
+PASS
+ok  	github.com/cmu440/tests	1.677s
+=== TestLocalSyncBasic3: 4 actors: Put on one actor, Get on all
+PASS
+ok  	github.com/cmu440/tests	1.675s
+=== TestLocalSyncBasic4: 4 actors: Put on all actors concurrently (distinct keys), Get on all
+PASS
+ok  	github.com/cmu440/tests	1.712s
+=== TestLocalSyncFrequency1: 2 actors: Put on one actor, Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	4.898s
+=== TestLocalSyncFrequency2: 2 actors: Put on all actors concurrently (distinct keys), Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	4.944s
+=== TestLocalSyncFrequency3: 4 actors: Put on one actor, Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	4.902s
+=== TestLocalSyncFrequency4: 4 actors: Put on all actors concurrently (distinct keys), Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	4.937s
+=== TestLocalSyncSize1: 2 actors: Put on one actor, Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	3.912s
+=== TestLocalSyncSize2: 2 actors: Put on two actors concurrently (distinct keys), Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	3.880s
+=== TestLocalSyncSize3: 4 actors: Put on one actor, Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	3.896s
+=== TestLocalSyncSize4: 4 actors: Put on all actors concurrently (distinct keys), Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	3.950s
+=== TestLocalSyncLWW1: 4 actors: Put on two actors with small offset (<< sync interval), verify LWW
+PASS
+ok  	github.com/cmu440/tests	1.689s
+=== TestLocalSyncLWW2: 4 actors: Put on two actors concurrently, then causally overwrite on one
+PASS
+ok  	github.com/cmu440/tests	2.195s
+=== TestLocalSyncLWW3: 4 actors: Put on two actors concurrently, then causally overwrite on a third
+PASS
+ok  	github.com/cmu440/tests	2.196s
+=== TestLocalSyncLWW4: 4 actors: Check that a re-Put of the *same* value gets a new timestamp
+PASS
+ok  	github.com/cmu440/tests	1.703s
+=== TestLocalSyncStress1: 2 actors x 4 clients: stress test
+PASS
+ok  	github.com/cmu440/tests	3.327s
+=== TestLocalSyncStress2: 4 actors x 4 clients: stress test
+PASS
+ok  	github.com/cmu440/tests	3.147s
+=== TestRemoteSyncBasic1: 2 servers x 1 actor: Put on one actor, Get on all
+PASS
+ok  	github.com/cmu440/tests	3.978s
+=== TestRemoteSyncBasic2: 2 servers x 1 actor: Put on all actors concurrently (distinct keys), Get on all
+PASS
+ok  	github.com/cmu440/tests	3.992s
+=== TestRemoteSyncBasic3: 4 servers x 1 actor: Put on one actor, Get on all
+PASS
+ok  	github.com/cmu440/tests	4.105s
+=== TestRemoteSyncBasic4: 4 servers x 1 actor: Put on all actors concurrently (distinct keys), Get on all
+PASS
+ok  	github.com/cmu440/tests	4.036s
+=== TestRemoteSyncLocal1: 2 servers x 4 actors: Put on one actor, Get on all
+PASS
+ok  	github.com/cmu440/tests	3.958s
+=== TestRemoteSyncLocal2: 2 servers x 4 actors: Put on all actors concurrently (distinct keys), Get on all
+PASS
+ok  	github.com/cmu440/tests	4.097s
+=== TestRemoteSyncLocal3: 4 servers x 4 actors: Put on one actor, Get on all
+PASS
+ok  	github.com/cmu440/tests	3.985s
+=== TestRemoteSyncLocal4: 4 servers x 4 actors: Put on all actors concurrently (distinct keys), Get on all
+PASS
+ok  	github.com/cmu440/tests	4.361s
+=== TestRemoteSyncFrequency1: 2 servers x 4 actors: Put on one actor, Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	7.256s
+=== TestRemoteSyncFrequency2: 2 servers x 4 actors: Put on all actors concurrently (distinct keys), Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	7.306s
+=== TestRemoteSyncFrequency3: 4 servers x 4 actors: Put on one actor, Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	7.292s
+=== TestRemoteSyncFrequency4: 4 servers x 4 actors: Put on all actors concurrently (distinct keys), Get on all w/ frequency limit
+PASS
+ok  	github.com/cmu440/tests	7.567s
+=== TestRemoteSyncSize1: 2 servers x 4 actors: Put on one actor, Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	8.429s
+=== TestRemoteSyncSize2: 2 servers x 4 actors: Put on all actors concurrently (distinct keys), Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	8.329s
+=== TestRemoteSyncSize3: 4 servers x 4 actors: Put on one actor, Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	8.414s
+=== TestRemoteSyncSize4: 4 servers x 4 actors: Put on all actors concurrently (distinct keys), Get on all w/ size increase limit
+PASS
+ok  	github.com/cmu440/tests	9.363s
+=== TestRemoteSyncNoBcast1: Remote sync from 1 actor to (1 vs 4) actors should have similar network usage
+PASS
+ok  	github.com/cmu440/tests	3.183s
+=== TestRemoteSyncNoBcast2: Remote sync from 4 actors to (1 vs 4) actors should have similar network usage
+PASS
+ok  	github.com/cmu440/tests	3.225s
+=== TestRemoteSyncLWW1: 4 servers x 1 actor: Put on two actors with small offset (<< sync interval), verify LWW
+PASS
+ok  	github.com/cmu440/tests	3.977s
+=== TestRemoteSyncLWW2: 4 servers x 1 actor: Put on two actors concurrently, then causally overwrite on one
+PASS
+ok  	github.com/cmu440/tests	6.005s
+=== TestRemoteSyncLWW3: 4 servers x 1 actor: Put on two actors concurrently, then causally overwrite on a third
+PASS
+ok  	github.com/cmu440/tests	6.005s
+=== TestRemoteSyncLWW4: 4 servers x 1 actor: Check that a re-Put of the *same* value gets a new timestamp
+PASS
+ok  	github.com/cmu440/tests	4.240s
+=== TestServerStartup1: 2 servers x 1 actor: values on old server make it to new server
+PASS
+ok  	github.com/cmu440/tests	3.148s
+=== TestServerStartup2: 2 servers x 4 actors: values on old server make it to new server
+PASS
+ok  	github.com/cmu440/tests	3.175s
+=== TestServerStartup3: 2 servers x 1 actor: Put on new server during startup makes it to old server
+PASS
+ok  	github.com/cmu440/tests	3.162s
+=== TestServerStartup4: 2 servers x 4 actors: various Puts around startup time give LWW result
+PASS
+ok  	github.com/cmu440/tests	3.198s
+=== TestServerStartup5: 4 servers x 4 actors: Puts at various times during startup make it to all actors
+--- FAIL: TestServerStartup5 (8.09s)
+    server_startup_test.go:248: Starting server 0
+    utils.go:77: Starting server with ActorSystem on port 12025 and 4 query actors on ports 12026-12029
+    server_startup_test.go:265: Putting a value on each server while new server connects to old
+    utils.go:96: Waiting 2s for sync
+    server_startup_test.go:248: Starting server 1
+    utils.go:77: Starting server with ActorSystem on port 12045 and 4 query actors on ports 12046-12049
+    server_startup_test.go:265: Putting a value on each server while new server connects to old
+    query_wrappers.go:13: (server 0, actor 1) Calling client.Put("key0_1", "value0_1")
+    query_wrappers.go:13: (server 0, actor 1) Put("key0_1", "value0_1") succeeded
+    utils.go:96: Waiting 2s for sync
+    server_startup_test.go:248: Starting server 2
+    utils.go:77: Starting server with ActorSystem on port 12065 and 4 query actors on ports 12066-12069
+    server_startup_test.go:265: Putting a value on each server while new server connects to old
+    query_wrappers.go:13: (server 0, actor 2) Calling client.Put("key0_2", "value0_2")
+    query_wrappers.go:13: (server 0, actor 2) Put("key0_2", "value0_2") succeeded
+    query_wrappers.go:13: (server 1, actor 3) Calling client.Put("key1_2", "value1_2")
+    query_wrappers.go:13: (server 1, actor 3) Put("key1_2", "value1_2") succeeded
+    utils.go:96: Waiting 2s for sync
+    server_startup_test.go:248: Starting server 3
+    utils.go:77: Starting server with ActorSystem on port 12085 and 4 query actors on ports 12086-12089
+    server_startup_test.go:265: Putting a value on each server while new server connects to old
+    query_wrappers.go:13: (server 0, actor 3) Calling client.Put("key0_3", "value0_3")
+    query_wrappers.go:13: (server 0, actor 3) Put("key0_3", "value0_3") succeeded
+    query_wrappers.go:13: (server 1, actor 0) Calling client.Put("key1_3", "value1_3")
+    query_wrappers.go:13: (server 1, actor 0) Put("key1_3", "value1_3") succeeded
+    query_wrappers.go:13: (server 2, actor 1) Calling client.Put("key2_3", "value2_3")
+    query_wrappers.go:13: (server 2, actor 1) Put("key2_3", "value2_3") succeeded
+    utils.go:96: Waiting 2s for sync
+    server_startup_test.go:277: Checking that all actors have all entries
+    query_wrappers.go:70: [ERROR] (server 2, actor 0) List("") omits expected entry ("key0_1", "value0_1")
+    query_wrappers.go:70: [ERROR] (server 2, actor 1) List("") omits expected entry ("key0_1", "value0_1")
+    query_wrappers.go:70: [ERROR] (server 2, actor 2) List("") omits expected entry ("key0_1", "value0_1")
+    query_wrappers.go:70: [ERROR] (server 2, actor 3) List("") omits expected entry ("key0_1", "value0_1")
+    query_wrappers.go:70: [ERROR] (server 3, actor 0) List("") omits expected entry ("key0_1", "value0_1")
+    query_wrappers.go:70: [ERROR] (server 3, actor 1) List("") omits expected entry ("key0_1", "value0_1")
+    query_wrappers.go:70: [ERROR] (server 3, actor 2) List("") omits expected entry ("key0_1", "value0_1")
+    query_wrappers.go:70: [ERROR] (server 3, actor 3) List("") omits expected entry ("key1_2", "value1_2")
+FAIL
+exit status 1
+FAIL	github.com/cmu440/tests	8.234s
+=== TestRemoteSyncStress1: 2 servers x 4 actors x 4 clients: stress test
+PASS
+ok  	github.com/cmu440/tests	7.662s
+=== TestRemoteSyncStress2: 4 servers x 4 actors x 4 clients: stress test
+PASS
+ok  	github.com/cmu440/tests	7.863s
